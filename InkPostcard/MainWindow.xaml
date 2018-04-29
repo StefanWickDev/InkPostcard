@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InkPostcard"
         mc:Ignorable="d"
-        Title="Ink Postcard" Height="600" Width="800" Icon="stamp.jpg" Cursor="Arrow">
+        Title="Ink Postcard" Height="800" Width="1024" MinHeight="600" MinWidth="840" Icon="stamp.jpg" Cursor="Arrow">
     <Grid >
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -22,17 +22,32 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.Row="0" Grid.Column="0" Width="240" Height="135" Margin="12" HorizontalAlignment="Center">
+        <Rectangle Grid.Row="0" Grid.Column="0" Width="320" Height="180" Margin="12,6,6,6" HorizontalAlignment="Center">
             <Rectangle.Fill>
                 <VisualBrush Visual="{Binding ElementName=icFront}" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="12">
-            <Button  Content="New Postcard" Click="Button_Click_1" Margin="6"/>
-            <Button  Content="Swap Sides" Click="Button_Click" Margin="6"/>
-            <Button  Content="Send Email" Click="Button_Click_2" Margin="6"/>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="12,6,12,6">
+            <Button Click="Button_Click_1" Margin="0,6,0,6" FontFamily="Segoe UI" FontSize="15">
+                <StackPanel>
+                    <Image Source="new.png" Width="32" Height="32"/>
+                    <TextBlock>New Postcard</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="Button_Click" Margin="0,6,0,6" FontFamily="Segoe UI" FontSize="15">
+                <StackPanel>
+                    <Image Source="refresh-512.png" Width="32" Height="32"/>
+                    <TextBlock>Flip Postcard</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="Button_Click_2" Margin="0,6,0,6" FontFamily="Segoe UI" FontSize="15">
+                <StackPanel>
+                    <Image Source="Outlook-High-res.png" Width="32" Height="32"/>
+                    <TextBlock>Send with Outlook</TextBlock>
+                </StackPanel>
+            </Button>
         </StackPanel>
-        <Rectangle Grid.Row="0" Grid.Column="2" Width="240" Height="135" Margin="12" HorizontalAlignment="Center">
+        <Rectangle Grid.Row="0" Grid.Column="2" Width="320" Height="180" Margin="6,6,12,6" HorizontalAlignment="Center">
             <Rectangle.Fill>
                 <VisualBrush Visual="{Binding ElementName=icBack}" Stretch="UniformToFill"/>
             </Rectangle.Fill>
@@ -71,7 +86,7 @@
                 </InkCanvas>
                 <local:HighContrastInkCanvas x:Name="icFront" Panel.ZIndex="2" Width="800" Height="450">
                     <local:HighContrastInkCanvas.Background>
-                        <ImageBrush x:Name="backgroundImage" ImageSource="Windows_Insider_Ninjacat_Tiger-1024x768.png"/>
+                        <ImageBrush x:Name="backgroundImage" ImageSource="Ninjacat.png"/>
                     </local:HighContrastInkCanvas.Background>
                     <Border BorderBrush="White" BorderThickness="2"
                           Width="{Binding ElementName=icBack,Path=Width}"

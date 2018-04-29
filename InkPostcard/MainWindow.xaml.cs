@@ -26,7 +26,7 @@ namespace InkPostcard
         public MainWindow()
         {
             InitializeComponent();
-            icFront.Color = Colors.Black;
+            icFront.Color = Colors.HotPink;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,7 +40,7 @@ namespace InkPostcard
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDlg = new OpenFileDialog();
-            fileDlg.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
+            fileDlg.Filter = "Image Files(*.PNG;*.JPG;*.GIF)|*.PNG;*.JPG;*.GIF|All files (*.*)|*.*";
             if (fileDlg.ShowDialog() == true)
             {
                 BitmapImage bitmap = new BitmapImage(new Uri(fileDlg.FileName));

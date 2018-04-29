@@ -108,5 +108,10 @@
   <ItemGroup>
     <Resource Include="Ninjacat.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="new.png" />
+    <Resource Include="Outlook-High-res.png" />
+    <Resource Include="refresh-512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
