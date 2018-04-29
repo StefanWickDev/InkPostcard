@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ColourSliderLibrary;
 
 namespace InkPostcard
 {
@@ -27,6 +28,13 @@ namespace InkPostcard
         {
             InitializeComponent();
             icFront.Color = Colors.HotPink;
+
+            string []args = Environment.GetCommandLineArgs();
+            if (args.Length > 1)
+            {
+                fileHandler.Visibility = Visibility.Visible;
+                mainGrid.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -103,6 +111,18 @@ namespace InkPostcard
             {
                 encoder.Save(fs);
             }
+        }
+
+        private void colorSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            icFront.Color = colorSlider.SelectedColour;
+            icBack.DefaultDrawingAttributes.Color = colorSlider.SelectedColour;
+        }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainGrid.Visibility = Visibility.Visible;
+            fileHandler.Visibility = Visibility.Hidden;
         }
     }
 }
