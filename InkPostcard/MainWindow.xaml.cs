@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ColourSliderLibrary;
+using System.Reflection;
 
 namespace InkPostcard
 {
@@ -35,6 +36,16 @@ namespace InkPostcard
                 fileHandler.Visibility = Visibility.Visible;
                 mainGrid.Visibility = Visibility.Hidden;
             }
+
+            var dpiXProperty = typeof(SystemParameters).GetProperty("DpiX", BindingFlags.NonPublic | BindingFlags.Static);
+            var dpiYProperty = typeof(SystemParameters).GetProperty("Dpi", BindingFlags.NonPublic | BindingFlags.Static);
+
+            var dpiX = (int)dpiXProperty.GetValue(null, null);
+            var dpiY = (int)dpiYProperty.GetValue(null, null);
+            this.Height = 640 * dpiX / 96;
+            this.Width = 820 * dpiY / 96;
+            this.MinHeight = 480 * dpiY / 96;
+            this.MinWidth = 672 * dpiY / 96;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

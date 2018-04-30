@@ -42,7 +42,7 @@
                                 <Thumb>
                                     <Thumb.Template>
                                         <ControlTemplate>
-                                            <Grid>
+                                            <Grid RenderTransformOrigin="0.5,0.5">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="10" />
                                                     <RowDefinition Height="*" />
@@ -54,7 +54,7 @@
                                                             <DrawingImage.Drawing>
                                                                 <GeometryDrawing Geometry="M 30 50 L 50 0 10 0 Z">
                                                                     <GeometryDrawing.Pen>
-                                                                        <Pen Brush="Crimson" Thickness="25" LineJoin="Round" />
+                                                                        <Pen Brush="DarkGray" Thickness="25" LineJoin="Round" />
                                                                     </GeometryDrawing.Pen>
                                                                 </GeometryDrawing>
                                                             </DrawingImage.Drawing>
@@ -67,13 +67,16 @@
                                                             <DrawingImage.Drawing>
                                                                 <GeometryDrawing Geometry="M 25 0 L 10 40 40 40 Z">
                                                                     <GeometryDrawing.Pen>
-                                                                        <Pen Brush="Crimson" Thickness="25" LineJoin="Round" />
+                                                                        <Pen Brush="DarkGray" Thickness="25" LineJoin="Round" />
                                                                     </GeometryDrawing.Pen>
                                                                 </GeometryDrawing>
                                                             </DrawingImage.Drawing>
                                                         </DrawingImage>
                                                     </Image.Source>
                                                 </Image>
+                                                <Grid.RenderTransform>
+                                                    <ScaleTransform ScaleX="1.7" ScaleY="1.7"/>
+                                                </Grid.RenderTransform>
                                             </Grid>
                                         </ControlTemplate>
                                     </Thumb.Template>

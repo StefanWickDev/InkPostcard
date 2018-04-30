@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:InkPostcard"
         xmlns:slider="clr-namespace:ColourSliderLibrary"
         mc:Ignorable="d"
-        Title="Ink Postcard" Height="800" Width="1024" MinHeight="600" MinWidth="840" Icon="stamp.jpg" Cursor="Arrow">
+        Title="Ink Postcard" Icon="stamp.jpg" Cursor="Arrow" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen">
     <Grid >
         <Grid x:Name="mainGrid">
             <Grid.Background>

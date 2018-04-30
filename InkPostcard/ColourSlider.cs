@@ -45,6 +45,12 @@
                 new GradientStop(Colors.White, 0.98),
                 new GradientStop(Colors.White, 1),
             });
+            this.SizeChanged += ColourSlider_SizeChanged;
+        }
+
+        private void ColourSlider_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            this.CacheBitmap();
         }
 
         public Color SelectedColour
