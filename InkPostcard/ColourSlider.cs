@@ -24,7 +24,7 @@
 
         public static readonly DependencyProperty SelectedColoursProperty =
             DependencyProperty.Register("SelectedColour", typeof(Color), typeof(ColourSlider),
-            new UIPropertyMetadata(Colors.LightBlue, new PropertyChangedCallback(SelectedColourChangedCallBack)));
+            new UIPropertyMetadata(Colors.DarkBlue, new PropertyChangedCallback(SelectedColourChangedCallBack)));
 
         public ColourSlider()
         {

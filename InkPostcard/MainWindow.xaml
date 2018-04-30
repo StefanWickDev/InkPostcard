@@ -26,27 +26,37 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.Triggers>
-                <EventTrigger SourceName="flipButton" RoutedEvent="ToggleButton.Unchecked">
+                <EventTrigger SourceName="flipButton" RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard x:Name="flipStoryboard">
                         <Storyboard>
+                            <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.5" Storyboard.TargetName="icFront" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" From="0" To="500"/>
+                            <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.5" Storyboard.TargetName="icBack" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" From="500" To="0"/>
                             <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="icFront" Storyboard.TargetProperty="(Canvas.ZIndex)">
-                                <DiscreteInt32KeyFrame Value="2" KeyTime="00:00:00"/>
-                            </Int32AnimationUsingKeyFrames>
-                            <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="icBack" Storyboard.TargetProperty="(Canvas.ZIndex)">
                                 <DiscreteInt32KeyFrame Value="1" KeyTime="00:00:00"/>
                             </Int32AnimationUsingKeyFrames>
+                            <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="icBack" Storyboard.TargetProperty="(Canvas.ZIndex)">
+                                <DiscreteInt32KeyFrame Value="2" KeyTime="00:00:00"/>
+                            </Int32AnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.6" Storyboard.TargetName="icFront" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)">
+                                <DiscreteDoubleKeyFrame Value="0" KeyTime="00:00:00.6"/>
+                            </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-                <EventTrigger SourceName="flipButton" RoutedEvent="ToggleButton.Checked">
+                <EventTrigger SourceName="flipButton" RoutedEvent="ToggleButton.Unchecked">
                     <BeginStoryboard x:Name="flipbackStoryboard">
                         <Storyboard>
+                            <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.5" Storyboard.TargetName="icBack" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" From="0" To="500"/>
+                            <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.5" Storyboard.TargetName="icFront" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" From="500" To="0"/>
                             <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="icBack" Storyboard.TargetProperty="(Canvas.ZIndex)">
-                                <DiscreteInt32KeyFrame Value="2" KeyTime="00:00:00"/>
-                            </Int32AnimationUsingKeyFrames>
-                            <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="icFront" Storyboard.TargetProperty="(Canvas.ZIndex)">
                                 <DiscreteInt32KeyFrame Value="1" KeyTime="00:00:00"/>
                             </Int32AnimationUsingKeyFrames>
+                            <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="icFront" Storyboard.TargetProperty="(Canvas.ZIndex)">
+                                <DiscreteInt32KeyFrame Value="2" KeyTime="00:00:00"/>
+                            </Int32AnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.6" Storyboard.TargetName="icBack" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)">
+                                <DiscreteDoubleKeyFrame Value="0" KeyTime="00:00:00.6"/>
+                            </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -91,7 +101,7 @@
                             <DrawingAttributes Color="Blue" Width="2" Height="2"/>
                         </InkCanvas.DefaultDrawingAttributes>
                         <InkCanvas.RenderTransform>
-                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1" ScaleY="1"/>
+                            <TranslateTransform X="0" Y="0"/>
                         </InkCanvas.RenderTransform>
                         <Border BorderBrush="Black" BorderThickness="2"
                               Width="{Binding ElementName=icBack,Path=Width}"
@@ -119,7 +129,7 @@
                             <ImageBrush x:Name="backgroundImage" ImageSource="Ninjacat.png"/>
                         </local:HighContrastInkCanvas.Background>
                         <local:HighContrastInkCanvas.RenderTransform>
-                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1" ScaleY="1"/>
+                            <TranslateTransform X="0" Y="0"/>
                         </local:HighContrastInkCanvas.RenderTransform>
                         <Border BorderBrush="White" BorderThickness="2"
                               Width="{Binding ElementName=icBack,Path=Width}"

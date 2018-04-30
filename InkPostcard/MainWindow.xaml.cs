@@ -76,7 +76,7 @@ namespace InkPostcard
             mail.HTMLBody = @"<p>Open this postcard in the app to bring it to life, and create your own!</p><img src='cid:" + "icFront" + guid + ".jpg" + "' width=480 height=270/><p>  </p><img src='cid:" + "icBack" + guid + ".jpg" + "' width=480 height=270/><p/><a href='https://www.microsoft.com/store/apps/9NBNHTJPCS5F'>Sent from InkPostcard App</a>";
             mail.Attachments.Add(filePath1);
             mail.Attachments.Add(filePath2);
-            mail.Attachments.Add(zipPath);
+            //mail.Attachments.Add(zipPath);
             mail.Display();
         }
 
