@@ -66,7 +66,7 @@
                     <VisualBrush Visual="{Binding ElementName=icFront}" Stretch="UniformToFill"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="12,6,12,6">
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="6">
                 <Button Click="Button_Click_1" Margin="0,6,0,6" FontFamily="Segoe UI" FontSize="15">
                     <StackPanel>
                         <Image Source="new.png" Width="32" Height="32"/>
@@ -154,7 +154,7 @@
                              Storyboard.TargetProperty = "Value"
                              From                      = "-180"
                              To                        = "180"
-                             Duration                  = "0:0:33"
+                             Duration                  = "0:0:15"
                              RepeatBehavior            = "Forever"/>
                         </Storyboard>
                     </BeginStoryboard>
@@ -236,7 +236,7 @@
 
                     <Grid x:Name="pcFront" Grid.Column="0" Width="400" Height="300">
                         <Border BorderBrush="White" BorderThickness="5" >
-                            <Image x:Name="imgFront" Source="Toco Toucan.jpg"/>
+                            <Image x:Name="imgFront" Source="Ninjacat.png"/>
                         </Border>
                     </Grid>
                 </Viewport2DVisual3D>
@@ -281,7 +281,7 @@
 
                     <Grid x:Name="pcBack" Grid.Column="0" Width="400" Height="300">
                         <Border BorderBrush="White" BorderThickness="5" >
-                            <Image x:Name="imgBack" Source="Toco Toucan.jpg"/>
+                            <Image x:Name="imgBack" Source="Ninjacat.png"/>
                         </Border>
                     </Grid>
                 </Viewport2DVisual3D>

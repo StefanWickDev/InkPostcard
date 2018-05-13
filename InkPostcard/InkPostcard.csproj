@@ -107,9 +107,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="IMG_20180415_171315.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="stamp.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -119,9 +116,6 @@
     <Resource Include="new.png" />
     <Resource Include="Outlook-High-res.png" />
     <Resource Include="refresh-512.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Toco Toucan.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

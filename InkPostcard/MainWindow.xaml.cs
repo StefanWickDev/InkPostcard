@@ -42,10 +42,10 @@ namespace InkPostcard
 
             var dpiX = (int)dpiXProperty.GetValue(null, null);
             var dpiY = (int)dpiYProperty.GetValue(null, null);
-            this.Height = 640 * dpiX / 96;
-            this.Width = 820 * dpiY / 96;
-            this.MinHeight = 480 * dpiY / 96;
-            this.MinWidth = 672 * dpiY / 96;
+            this.Height = 1024 * 96 / dpiY;
+            this.Width = 1280 * 96 / dpiX;
+            this.MinHeight = 768 * 96 / dpiY;
+            this.MinWidth = 1152 * 96 / dpiX;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -87,7 +87,7 @@ namespace InkPostcard
             mail.HTMLBody = @"<p>Open this postcard in the app to bring it to life, and create your own!</p><img src='cid:" + "icFront" + guid + ".jpg" + "' width=480 height=270/><p>  </p><img src='cid:" + "icBack" + guid + ".jpg" + "' width=480 height=270/><p/><a href='https://www.microsoft.com/store/apps/9NBNHTJPCS5F'>Sent from InkPostcard App</a>";
             mail.Attachments.Add(filePath1);
             mail.Attachments.Add(filePath2);
-            //mail.Attachments.Add(zipPath);
+            mail.Attachments.Add(zipPath);
             mail.Display();
         }
 
