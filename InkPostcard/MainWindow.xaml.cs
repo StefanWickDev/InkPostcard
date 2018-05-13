@@ -42,10 +42,10 @@ namespace InkPostcard
 
             var dpiX = (int)dpiXProperty.GetValue(null, null);
             var dpiY = (int)dpiYProperty.GetValue(null, null);
-            this.Height = 1024 * 96 / dpiY;
-            this.Width = 1280 * 96 / dpiX;
-            this.MinHeight = 768 * 96 / dpiY;
-            this.MinWidth = 1152 * 96 / dpiX;
+            this.Height = 820;
+            this.Width = 1024;
+            this.MinHeight = 614;
+            this.MinWidth = 922;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
